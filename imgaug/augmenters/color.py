@@ -333,6 +333,8 @@ class ChangeColorspace(Augmenter):
                 if self.from_colorspace in [ChangeColorspace.RGB, ChangeColorspace.BGR]:
                     from_to_var_name = "%s2%s" % (self.from_colorspace, to_colorspace)
                     from_to_var = ChangeColorspace.CV_VARS[from_to_var_name]
+                    print("fromtovar {}".format(from_to_var))
+                    print("image shape {}".format(image.shape))
                     img_to_cs = cv2.cvtColor(image, from_to_var)
                 else:
                     # convert to RGB
